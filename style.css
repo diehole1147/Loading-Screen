@@ -1,0 +1,56 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  width: 95vw;
+}
+
+svg {
+  display: block;
+}
+
+circle {
+  fill: none;
+  stroke: url(#myGradient);
+  filter: url(#shadow);
+  stroke-width: 4;
+  stroke-linecap: round;
+  /* Animation */
+  animation: circular-load 5s infinite;
+  /* Enable transition when properties change */
+  transition: stroke-dashoffset 0.5s, stroke-dasharray 0.5s;
+}
+
+@keyframes circular-load {
+  0% {
+    stroke-dashoffset: var(--do0);
+    stroke-dasharray: var(--da01), var(--da02);
+  }
+  25% {
+    stroke-dashoffset: var(--do25);
+    stroke-dasharray: var(--da251), var(--da252);
+  }
+  50% {
+    stroke-dashoffset: var(--do50);
+    stroke-dasharray: var(--da501), var(--da502);
+  }
+  75% {
+    stroke-dashoffset: var(--do75);
+    stroke-dasharray: var(--da751), var(--da752);
+  }
+  100% {
+    stroke-dashoffset: var(--do100);
+    stroke-dasharray: var(--da1001), var(--da1002);
+  }
+}
